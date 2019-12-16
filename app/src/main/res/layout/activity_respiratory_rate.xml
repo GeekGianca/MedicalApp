@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_bg"
+    android:id="@+id/respiratory_rate_layout"
+    tools:context=".RespiratoryRateActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#97000000">
+
+        <ImageView
+            android:id="@+id/back_rrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_arrow_back_white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/roboto_mono_medium"
+            android:gravity="center"
+            android:text="@string/rate_respiratory_text"
+            android:textColor="@color/colorIcons"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/back_rrate"
+            app:layout_constraintStart_toEndOf="@+id/back_rrate"
+            app:layout_constraintTop_toTopOf="@+id/back_rrate" />
+
+        <ImageView
+            android:id="@+id/bt_state_img_rrate"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/ic_bluetooth_connected"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/state_bt_rrate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_mono_thin"
+            android:text="Conectado"
+            android:textColor="@color/colorIcons"
+            app:layout_constraintEnd_toEndOf="@+id/bt_state_img_rrate"
+            app:layout_constraintStart_toStartOf="@+id/bt_state_img_rrate"
+            app:layout_constraintTop_toBottomOf="@+id/bt_state_img_rrate" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/roboto_mono_medium"
+            android:gravity="center"
+            android:text="@string/data_info_title"
+            android:textColor="@color/colorIcons"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_state_img_rrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/state_bt_rrate"
+            app:layout_constraintTop_toTopOf="@+id/bt_state_img_rrate" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/respiratory_rate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:fontFamily="@font/roboto_mono_thin"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/colorIcons"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/state_bt_rrate" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_marginTop="20dp"
+            android:id="@+id/rate_respiratory_chart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            app:layout_constraintTop_toBottomOf="@+id/respiratory_rate" />
+
+        <TextView
+            android:id="@+id/user_current_selected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:text="Paciente: ?"
+            android:textColor="@color/colorIcons"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rate_respiratory_chart" />
+
+        <Button
+            android:id="@+id/store_data_rrate"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_mono_thin"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@drawable/round_button_white"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:text="Guardar datos"
+            app:layout_constraintBottom_toTopOf="@+id/take_data_rrate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/take_data_rrate"
+            android:layout_marginEnd="40dp"
+            android:layout_marginStart="40dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_mono_thin"
+            android:textColor="@color/colorPrimaryText"
+            android:background="@drawable/round_button_white"
+            style="@style/TextAppearance.AppCompat.Widget.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/take_data_bt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

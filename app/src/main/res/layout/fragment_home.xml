@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_bg">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A4FFFFFF">
+
+        <ImageView
+            android:id="@+id/exit_app"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_exit_to_app"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_detail_resume"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="30dp"
+            android:elevation="50dp"
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#1EFFFFFF">
+
+                <TextView
+                    android:id="@+id/average_heart_rate"
+                    android:gravity="center"
+                    android:textColor="@color/colorIcons"
+                    android:layout_marginTop="55dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/droid_sans"
+                    android:textStyle="bold"
+                    android:text="0"
+                    android:textSize="40sp"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:textSize="11sp"
+                    android:text="@string/rate_heart"
+                    android:textColor="@color/colorIcons"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/average_heart_rate" />
+
+                <ProgressBar
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:indeterminateTint="#FED0A4"
+                    android:indeterminateTintMode="src_atop"
+                    android:max="1000"
+                    android:progress="0"
+                    android:progressBackgroundTint="#FED0A4"
+                    android:theme="@style/Widget.AppCompat.ProgressBar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/guideline"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/state_device_image"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="45dp"
+                    android:src="@drawable/ic_bluetooth_disabled"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/state_device"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@color/colorIcons"
+                    android:fontFamily="@font/droid_sans"
+                    android:gravity="center"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/state_bt_device"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/state_device_image" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="175dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_detail_resume">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/container_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                app:columnCount="2"
+                app:rowCount="3">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/heartbeat_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/fc_bg_image"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/fc_bg"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"/>
+
+                        <TextView
+                            android:textColor="@color/colorSecondaryText"
+                            app:layout_constraintTop_toBottomOf="@+id/fc_bg_image"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:gravity="center"
+                            android:fontFamily="@font/droid_sans"
+                            android:text="@string/pcardiaco"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/blood_oxygen_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/os_bg_img"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/os_bg"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"/>
+
+                        <TextView
+                            android:textColor="@color/colorSecondaryText"
+                            app:layout_constraintTop_toBottomOf="@+id/os_bg_img"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:gravity="center"
+                            android:fontFamily="@font/droid_sans"
+                            android:text="@string/osangre"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/respiratory_rate_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_marginTop="20dp"
+                            android:id="@+id/rr_bg_img"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/rr_bg"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"/>
+
+                        <TextView
+                            android:textColor="@color/colorSecondaryText"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/rr_bg_img"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:gravity="center"
+                            android:fontFamily="@font/droid_sans"
+                            android:text="@string/rrespiratorio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/body_temp_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="15dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="6dp"
+                    app:layout_columnWeight="1"
+                    app:layout_rowWeight="1"
+                    android:foreground="?selectableItemBackground">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imge_1"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:src="@drawable/tc_bg"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"/>
+
+                        <TextView
+                            android:textColor="@color/colorSecondaryText"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/imge_1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:gravity="center"
+                            android:fontFamily="@font/droid_sans"
+                            android:text="@string/tcorporal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.gridlayout.widget.GridLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
